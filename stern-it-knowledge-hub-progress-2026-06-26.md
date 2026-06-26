@@ -65,6 +65,73 @@ Current live GitHub Pages URL:
   - `http://localhost:8000/index.html`
 - The live GitHub Pages URL is now the preferred shareable preview link.
 
+### 5. Mobile Topbar Layout Update
+
+- Updated the responsive topbar behavior for mobile and small windows.
+- The title lockup remains available for accessibility, but visually collapses on small screens.
+- Notification and profile controls now sit in the top-right of the purple header above the active mobile nav item.
+- This keeps the mobile homepage from showing a large header block between the nav and the main search panel.
+
+### 6. Knowledge Hub Category Filtering
+
+- Converted the Knowledge Hub category rail from representative article links into in-page category filters.
+- Added category metadata to each article card so the Article Library can filter in place.
+- Category filters now combine with article search terms.
+- Existing category hash links such as `knowledge-hub.html#printing` now open the Knowledge Hub with that category selected.
+- Added an empty-state message for categories or search combinations with no matching articles.
+
+### 7. Subpage Hero Gradient
+
+- Removed the campus image from the shared subpage `page-heading` background and all KB article `article-hero` headers.
+- Replaced them with a top-left to bottom-right NYU-purple gradient, moving from dark to lighter purple.
+- The homepage search hero image treatment was left unchanged.
+
+### 8. Global Font Preference
+
+- Updated the global CSS font stack to prefer `NYU Perstare`.
+- Added `Perstare`, `Segoe UI`, `Inter`, `Arial`, and `sans-serif` as fallbacks.
+- No NYU Perstare font file is currently bundled in the repository, so browsers will use it when available locally or after a licensed web font is added.
+
+### 9. NYU Brand Palette Update
+
+- Added CSS variables for the requested NYU palette:
+  - Primary: `#57068c`
+  - Secondary: `#330662`, `#7b5aa6`, `#ab82c5`
+  - Neutral: `#404040`, `#b8b8b8`, `#6d6d6d`, `#d6d6d6`
+- Updated core brand gradients, navigation states, icon accents, cards, category filters, scrollbars, and form borders to use the new palette.
+- Kept semantic alert/status colors separate for warning, success, and error states.
+
+### 10. Article Library Card Sizing
+
+- Added a consistent minimum height for Knowledge Hub article cards.
+- Article cards show one title line and two summary lines in the Article Library.
+- Scoped the sizing to the Article Library list so other stacked lists are not forced into the same block height.
+- Filtered category views now keep article cards visually consistent even when summaries are shorter.
+- Removed forced list height so small filtered result sets do not create extra whitespace between cards.
+
+### 11. Sidebar Icon Alignment
+
+- Updated sidebar navigation rows to use a fixed centered icon column, keeping main navigation and footer utility icons visually aligned across active and inactive states.
+
+### 12. Quick Triage Layout
+
+- Reworked KB article Quick Triage sections from repeated label cards into a compact two-column triage matrix.
+- Kept the headings visible once per section while preserving each user wording and likely support area row.
+- Updated all current KB article pages that include a Quick Triage section.
+
+### 13. Article Folder Consolidation
+
+- Moved all KB article HTML pages into the `articles/` folder.
+- Updated Knowledge Hub and homepage article links to point to `articles/article-...` paths.
+- Updated article pages to load shared CSS and JavaScript from the repository root with `../` paths.
+- Updated shared navigation and search routing so generated links work from both root pages and article subpages.
+
+### 14. Homepage Dashboard Alignment
+
+- Aligned the homepage right-side column so Announcements, Popular Articles, and AI Assistant share the same width and right edge.
+- Reworked homepage row columns to prevent horizontal page overflow while preserving the three-column desktop layout.
+- Verified Popular Articles content and Browse by Category tiles still fit inside their cards after the column adjustment.
+
 ## Major Work Completed
 
 ### 1. Initial Website Prototype
@@ -144,21 +211,21 @@ Total KB article pages now in the site: **15**
 
 Article pages created:
 
-- `article-kb0010979-apps-stern-appstream-starting-ending-session.html`
-- `article-kb0010981-gmail-stern-requesting-vanity-email-address.html`
-- `article-kb0010983-papercut-faq.html`
-- `article-kb0010984-apps-stern-appstream-opening-saving-files.html`
-- `article-kb0010986-gmail-stern-send-mail-vanity-address.html`
-- `article-kb0010989-print-stern-papercut-web-print.html`
-- `article-kb0010990-print-stern-printer-release-stations.html`
-- `article-kb0010991-print-stern-email-to-print.html`
-- `article-kb0010992-ems-web-app-managing-av-services-events.html`
-- `article-kb0010993-ems-mediasite-brightspace-posting.html`
-- `article-kb0010994-mobile-devices-google-setup-ios.html`
-- `article-kb0010995-ems-web-app-adding-services-approved-booking.html`
-- `article-kb0010996-print-stern-requesting-refund.html`
-- `article-kb0010997-ems-web-app-managing-av-services-classes.html`
-- `article-kb0010999-mobile-devices-google-setup-android.html`
+- `articles/article-kb0010979-apps-stern-appstream-starting-ending-session.html`
+- `articles/article-kb0010981-gmail-stern-requesting-vanity-email-address.html`
+- `articles/article-kb0010983-papercut-faq.html`
+- `articles/article-kb0010984-apps-stern-appstream-opening-saving-files.html`
+- `articles/article-kb0010986-gmail-stern-send-mail-vanity-address.html`
+- `articles/article-kb0010989-print-stern-papercut-web-print.html`
+- `articles/article-kb0010990-print-stern-printer-release-stations.html`
+- `articles/article-kb0010991-print-stern-email-to-print.html`
+- `articles/article-kb0010992-ems-web-app-managing-av-services-events.html`
+- `articles/article-kb0010993-ems-mediasite-brightspace-posting.html`
+- `articles/article-kb0010994-mobile-devices-google-setup-ios.html`
+- `articles/article-kb0010995-ems-web-app-adding-services-approved-booking.html`
+- `articles/article-kb0010996-print-stern-requesting-refund.html`
+- `articles/article-kb0010997-ems-web-app-managing-av-services-classes.html`
+- `articles/article-kb0010999-mobile-devices-google-setup-android.html`
 
 ### 6. Article Page Design
 
@@ -176,7 +243,7 @@ Built the article pages around an internal-support layout:
 
 The first polished prototype was:
 
-`article-kb0010983-papercut-faq.html`
+`articles/article-kb0010983-papercut-faq.html`
 
 Changes made to that prototype:
 
@@ -220,6 +287,7 @@ Recent category rail refinements:
 - Categories are one column.
 - Category tabs are full width.
 - Category tabs are left-aligned and visually aligned.
+- Category tabs filter the Article Library instead of linking directly to representative article pages.
 
 ### 9. Home Page Link Updates
 
@@ -303,7 +371,6 @@ Important publishing note:
 ## Suggested Next Steps
 
 - Review a few generated KB pages manually and refine page-specific content where needed.
-- Decide whether categories should filter the article list instead of linking to a representative article.
 - Add more real content to Service Catalog, SOPs & Guides, Training, and Team Directory.
 - Decide whether the public GitHub Pages site is acceptable long term, or whether a private/internal hosting option is needed later.
 - Keep this notes file updated whenever a major site, repository, hosting, or content change is made.
