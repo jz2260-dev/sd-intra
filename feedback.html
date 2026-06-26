@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Submit Feedback | Stern IT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="layout.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="feedback">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">Submit Feedback</p>
+          <h2>Suggest content, corrections, or new intranet pages.</h2>
+          <p>This local form is ready for a future ticket queue or inbox connection.</p>
+        </div>
+      </section>
+
+      <section class="subpage-grid two-column">
+        <form class="card page-form">
+          <label>Topic<input type="text" placeholder="Article, service, page, or tool"></label>
+          <label>Feedback<textarea placeholder="What should be added, corrected, or improved?"></textarea></label>
+          <button type="submit">Submit feedback</button>
+        </form>
+        <article class="card page-card"><div class="card-title"><span class="title-icon people"><svg><use href="#icon-users"></use></svg></span><h2>What helps most</h2></div><div class="check-list"><p>Include the page or article name.</p><p>Describe the user problem being solved.</p><p>Flag anything time-sensitive or service-impacting.</p></div></article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stern IT Knowledge Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="layout.js" defer></script>
+    <script src="nyu-status-data.js" defer></script>
+    <script src="nyu-status.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="home">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <section class="hero-row">
+        <div class="hero-panel">
+          <div class="hero-content">
+            <h2>How can we help you today?</h2>
+            <form class="search-box">
+              <label for="kb-search" class="visually-hidden">Search the knowledge base</label>
+              <input id="kb-search" type="search" placeholder="Search the knowledge base...">
+              <button type="submit" aria-label="Search">
+                <svg><use href="#icon-search"></use></svg>
+              </button>
+            </form>
+            <div class="popular-searches">
+              <strong>Popular searches:</strong>
+              <a href="knowledge-hub.html#printing">Printing</a>
+              <a href="knowledge-hub.html#software">Apps@Stern</a>
+              <a href="knowledge-hub.html#classroom">EMS</a>
+              <a href="knowledge-hub.html#email">Gmail@Stern</a>
+              <a href="knowledge-hub.html#devices">Mobile setup</a>
+            </div>
+          </div>
+        </div>
+
+        <article class="card announcements-card">
+          <div class="card-title">
+            <span class="title-icon purple"><svg><use href="#icon-megaphone"></use></svg></span>
+            <h2>Announcements</h2>
+          </div>
+          <div class="announcement-list">
+            <div class="announcement">
+              <svg><use href="#icon-timer"></use></svg>
+              <div>
+                <h3>Banner Maintenance - June 12</h3>
+                <p>Banner will be unavailable Thursday 6/12 from 11:00 PM - 2:00 AM.</p>
+              </div>
+            </div>
+            <div class="announcement">
+              <svg><use href="#icon-board"></use></svg>
+              <div>
+                <h3>Zoom Outage Resolved</h3>
+                <p>The Zoom issue has been resolved. Thank you for your patience.</p>
+              </div>
+            </div>
+          </div>
+          <a class="link-action" href="announcements.html">View all announcements <svg><use href="#icon-arrow"></use></svg></a>
+        </article>
+      </section>
+
+      <section class="primary-row">
+        <article class="card quick-card">
+          <div class="card-title">
+            <span class="title-icon black"><svg><use href="#icon-bolt"></use></svg></span>
+            <h2>Quick Actions</h2>
+          </div>
+          <div class="quick-list">
+            <a class="quick-action" href="service-catalog.html#submit-incident">
+              <span class="quick-icon red"><svg><use href="#icon-clipboard"></use></svg></span>
+              <strong>Submit Incident</strong>
+              <svg class="chev"><use href="#icon-chevron"></use></svg>
+            </a>
+            <a class="quick-action" href="service-catalog.html#request-software">
+              <span class="quick-icon green"><svg><use href="#icon-grid"></use></svg></span>
+              <strong>Request Software</strong>
+              <svg class="chev"><use href="#icon-chevron"></use></svg>
+            </a>
+            <a class="quick-action" href="service-catalog.html#new-employee">
+              <span class="quick-icon purple-bg"><svg><use href="#icon-users"></use></svg></span>
+              <strong>New Employee Setup</strong>
+              <svg class="chev"><use href="#icon-chevron"></use></svg>
+            </a>
+            <a class="quick-action" href="service-catalog.html#laptop-imaging">
+              <span class="quick-icon blue"><svg><use href="#icon-laptop"></use></svg></span>
+              <strong>Laptop Imaging</strong>
+              <svg class="chev"><use href="#icon-chevron"></use></svg>
+            </a>
+            <a class="quick-action" href="knowledge-hub.html#password-reset">
+              <span class="quick-icon amber"><svg><use href="#icon-lock"></use></svg></span>
+              <strong>Password Reset</strong>
+              <svg class="chev"><use href="#icon-chevron"></use></svg>
+            </a>
+            <a class="quick-action" href="knowledge-hub.html#vpn">
+              <span class="quick-icon teal"><svg><use href="#icon-globe"></use></svg></span>
+              <strong>VPN Help</strong>
+              <svg class="chev"><use href="#icon-chevron"></use></svg>
+            </a>
+          </div>
+          <a class="link-action" href="service-catalog.html">View all services <svg><use href="#icon-arrow"></use></svg></a>
+        </article>
+
+        <article class="card category-card">
+          <div class="card-title">
+            <span class="title-icon blue-solid"><svg><use href="#icon-folder"></use></svg></span>
+            <h2>Browse by Category</h2>
+          </div>
+          <div class="category-grid">
+            <a class="category" href="knowledge-hub.html#devices">
+              <svg class="violet"><use href="#icon-laptop"></use></svg>
+              <strong>Devices</strong>
+            </a>
+            <a class="category" href="knowledge-hub.html#accounts">
+              <svg class="violet"><use href="#icon-user-lock"></use></svg>
+              <strong>Accounts &amp;<br>Access</strong>
+            </a>
+            <a class="category" href="knowledge-hub.html#email">
+              <svg class="blue-line"><use href="#icon-mail"></use></svg>
+              <strong>Email</strong>
+            </a>
+            <a class="category" href="knowledge-hub.html#classroom">
+              <svg class="green-line"><use href="#icon-classroom"></use></svg>
+              <strong>Classroom<br>Technology</strong>
+            </a>
+            <a class="category" href="knowledge-hub.html#printing">
+              <svg class="violet"><use href="#icon-printer"></use></svg>
+              <strong>Printing</strong>
+            </a>
+            <a class="category" href="knowledge-hub.html#networking">
+              <svg class="blue-line"><use href="#icon-wifi"></use></svg>
+              <strong>Networking</strong>
+            </a>
+            <a class="category" href="knowledge-hub.html#software">
+              <svg class="blue-line"><use href="#icon-grid"></use></svg>
+              <strong>Software</strong>
+            </a>
+            <a class="category" href="knowledge-hub.html#facilities">
+              <svg class="violet"><use href="#icon-building"></use></svg>
+              <strong>Facilities<br>Technology</strong>
+            </a>
+          </div>
+          <a class="link-action" href="knowledge-hub.html">View all categories <svg><use href="#icon-arrow"></use></svg></a>
+        </article>
+
+        <article class="card popular-card">
+          <div class="card-title">
+            <span class="title-icon orange"><svg><use href="#icon-fire"></use></svg></span>
+            <h2>Popular Articles</h2>
+          </div>
+          <div class="article-list">
+            <a class="article" href="article-kb0010983-papercut-faq.html"><svg><use href="#icon-file"></use></svg><span><strong>Print@Stern / PaperCut FAQ</strong><small>Updated 6/26/2026</small></span></a>
+            <a class="article" href="article-kb0010979-apps-stern-appstream-starting-ending-session.html"><svg><use href="#icon-file"></use></svg><span><strong>Apps@Stern streaming session</strong><small>Updated 6/26/2026</small></span></a>
+            <a class="article" href="article-kb0010981-gmail-stern-requesting-vanity-email-address.html"><svg><use href="#icon-file"></use></svg><span><strong>Request a vanity email address</strong><small>Updated 6/26/2026</small></span></a>
+            <a class="article" href="article-kb0010989-print-stern-papercut-web-print.html"><svg><use href="#icon-file"></use></svg><span><strong>PaperCut Web Print</strong><small>Updated 6/26/2026</small></span></a>
+            <a class="article" href="article-kb0010997-ems-web-app-managing-av-services-classes.html"><svg><use href="#icon-file"></use></svg><span><strong>EMS AV services for classes</strong><small>Updated 6/26/2026</small></span></a>
+            <a class="article" href="article-kb0010994-mobile-devices-google-setup-ios.html"><svg><use href="#icon-file"></use></svg><span><strong>iPhone Stern Google setup</strong><small>Updated 6/26/2026</small></span></a>
+          </div>
+          <a class="link-action" href="knowledge-hub.html#articles">View all articles <svg><use href="#icon-arrow"></use></svg></a>
+        </article>
+      </section>
+
+      <section class="secondary-row">
+        <article class="card alert-card">
+          <div class="card-title split-title">
+            <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+            <h2>Current Alerts</h2>
+            <a class="source-chip" href="https://support.nyu.edu/esc?id=services_status" target="_blank" rel="noreferrer">NYU status</a>
+          </div>
+          <div class="alert-list" data-nyu-alerts="home">
+            <div class="alert-item">
+              <span class="status red">!</span>
+              <div><strong>Wi-Fi Maintenance - June 15</strong><p>Wi-Fi may be intermittent on Sunday 6/15 from 1:00 AM - 5:00 AM.</p></div>
+            </div>
+            <div class="alert-item">
+              <span class="status orange-status">!</span>
+              <div><strong>Adobe Licensing Issue</strong><p>Some users may experience issues activating Adobe products.</p></div>
+            </div>
+            <div class="alert-item">
+              <span class="status yellow">!</span>
+              <div><strong>Printer Issues in KMC</strong><p>We are investigating printer errors on the 3rd floor.</p></div>
+            </div>
+          </div>
+          <a class="link-action" href="alerts.html">View all alerts <svg><use href="#icon-arrow"></use></svg></a>
+        </article>
+
+        <article class="card resource-card">
+          <div class="card-title">
+            <span class="title-icon people"><svg><use href="#icon-users"></use></svg></span>
+            <h2>Team Resources</h2>
+          </div>
+          <div class="resource-list">
+            <a class="resource" href="sops-guides.html"><svg><use href="#icon-file"></use></svg><span><strong>SOPs &amp; Procedures</strong><small>Step-by-step processes and guidelines</small></span></a>
+            <a class="resource" href="sops-guides.html#escalation"><svg><use href="#icon-chart"></use></svg><span><strong>Escalation Matrix</strong><small>Who to contact and when</small></span></a>
+            <a class="resource" href="team-directory.html"><svg><use href="#icon-users"></use></svg><span><strong>Team Contacts</strong><small>Directory and important phone numbers</small></span></a>
+            <a class="resource" href="training.html"><svg><use href="#icon-monitor"></use></svg><span><strong>Training &amp; Onboarding</strong><small>Guides, videos, and learning paths</small></span></a>
+            <a class="resource" href="sops-guides.html#standards"><svg><use href="#icon-message"></use></svg><span><strong>Documentation Standards</strong><small>How we create and maintain docs</small></span></a>
+          </div>
+          <a class="link-action" href="sops-guides.html">View all resources <svg><use href="#icon-arrow"></use></svg></a>
+        </article>
+
+        <article class="card assistant-card">
+          <div class="card-title">
+            <span class="title-icon bot"><svg><use href="#icon-bot"></use></svg></span>
+            <h2>AI Assistant</h2>
+          </div>
+          <div class="chat-window">
+            <div class="bot-mark"><svg><use href="#icon-bot"></use></svg></div>
+            <div class="chat-bubble">
+              <p>Hi! I'm your AI assistant.<br>How can I help you today?</p>
+              <button data-link="ai-assistant.html#password-reset">How do I reset a user's password?</button>
+              <button data-link="ai-assistant.html#outlook">Troubleshoot Outlook not opening</button>
+              <button data-link="ai-assistant.html#laptop-imaging">Where can I find the laptop imaging SOP?</button>
+            </div>
+          </div>
+          <form class="chat-input">
+            <label for="assistant-question" class="visually-hidden">Ask the assistant</label>
+            <input id="assistant-question" type="text" placeholder="Ask a question...">
+            <button type="submit" aria-label="Send">
+              <svg><use href="#icon-arrow"></use></svg>
+            </button>
+          </form>
+          <p class="disclaimer">AI responses may not always be accurate. Verify important information.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

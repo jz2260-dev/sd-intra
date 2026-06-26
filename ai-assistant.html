@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Assistant | Stern IT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="layout.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="assistant">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">AI Assistant</p>
+          <h2>Ask for a starting point, not the final authority.</h2>
+          <p>Use this assistant surface for triage prompts, article suggestions, and drafting support responses.</p>
+        </div>
+      </section>
+
+      <section class="assistant-page-grid">
+        <article class="card assistant-lab">
+          <div class="card-title"><span class="title-icon bot"><svg><use href="#icon-bot"></use></svg></span><h2>Support Assistant</h2></div>
+          <div class="assistant-transcript">
+            <p id="password-reset"><strong>Password reset:</strong> Verify identity, check account lock state, then guide the user through the approved NetID reset path.</p>
+            <p id="outlook"><strong>Outlook issue:</strong> Confirm webmail access, restart Outlook, check profile health, and review Microsoft service status.</p>
+            <p id="vpn"><strong>VPN issue:</strong> Confirm network access, MFA status, client version, and whether the user can reach other Stern services.</p>
+          </div>
+          <form class="chat-input wide-chat">
+            <label for="assistant-page-question" class="visually-hidden">Ask a question</label>
+            <input id="assistant-page-question" type="text" placeholder="Ask the assistant a Stern IT support question...">
+            <button type="submit" aria-label="Send"><svg><use href="#icon-arrow"></use></svg></button>
+          </form>
+        </article>
+
+        <aside class="card page-card">
+          <div class="card-title"><span class="title-icon purple"><svg><use href="#icon-bolt"></use></svg></span><h2>Prompt Starters</h2></div>
+          <div class="pill-grid single">
+            <a id="teams" href="#teams">Teams microphone not working</a>
+            <a id="laptop-imaging" href="sops-guides.html">Laptop imaging SOP</a>
+            <a href="knowledge-hub.html#mfa">MFA troubleshooting</a>
+            <a href="service-catalog.html#request-software">Software request summary</a>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

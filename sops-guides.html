@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SOPs & Guides | Stern IT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="layout.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="sops">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">SOPs &amp; Guides</p>
+          <h2>Procedures for consistent support delivery.</h2>
+          <p>Use this page for repeatable service desk processes, escalation paths, and documentation standards.</p>
+        </div>
+      </section>
+
+      <section class="subpage-grid three-column">
+        <article class="card page-card">
+          <div class="card-title"><span class="title-icon purple"><svg><use href="#icon-file"></use></svg></span><h2>Core SOPs</h2></div>
+          <div class="stack-list">
+            <a href="service-catalog.html#submit-incident"><strong>Incident intake</strong><span>Capture symptoms, affected users, and impact.</span></a>
+            <a href="service-catalog.html#laptop-imaging"><strong>Laptop imaging</strong><span>Prepare, image, validate, and hand off devices.</span></a>
+            <a href="service-catalog.html#new-employee"><strong>New employee setup</strong><span>Accounts, hardware, access, and onboarding checks.</span></a>
+          </div>
+        </article>
+
+        <article class="card page-card" id="escalation">
+          <div class="card-title"><span class="title-icon people"><svg><use href="#icon-chart"></use></svg></span><h2>Escalation Matrix</h2></div>
+          <div class="matrix-list">
+            <div><strong>Priority 1</strong><span>Service Desk Lead + Infrastructure</span></div>
+            <div><strong>Account access</strong><span>Identity &amp; Access team</span></div>
+            <div><strong>Classrooms</strong><span>AV support + Facilities Technology</span></div>
+            <div><strong>Security</strong><span>Information Security on-call</span></div>
+          </div>
+        </article>
+
+        <article class="card page-card" id="standards">
+          <div class="card-title"><span class="title-icon black"><svg><use href="#icon-message"></use></svg></span><h2>Documentation Standards</h2></div>
+          <div class="check-list">
+            <p>Use clear titles that match the user problem.</p>
+            <p>Keep prerequisites and escalation notes at the top.</p>
+            <p>Include last-reviewed dates and article owners.</p>
+            <p>Retire duplicates after the replacement is published.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

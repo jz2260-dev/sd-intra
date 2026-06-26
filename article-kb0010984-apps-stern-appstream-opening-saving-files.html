@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KB0010984 | Apps@Stern via AppStream: Opening and Saving Files</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="layout.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="knowledge">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <article class="kb-article">
+        <header class="article-hero">
+          <div>
+            <a class="breadcrumb-link" href="knowledge-hub.html">Knowledge Hub</a>
+            <p class="eyebrow">KB0010984 - Internal Article</p>
+            <h2>Apps@Stern via AppStream: Opening and Saving Files</h2>
+            <p>Users can open and save files in Apps@Stern through temporary local session storage or by connecting Google Drive inside the AppStream desktop. Temporary Files is useful for moving files between the user&#x27;s device and the session. Google Drive is better for files that need to remain available after the session ends.</p>
+          </div>
+
+          <aside class="article-meta-panel" aria-label="Article metadata">
+            <dl>
+              <div><dt>Owner</dt><dd>Stern IT Service Desk</dd></div>
+              <div><dt>Last reviewed</dt><dd>June 26, 2026</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="Article navigation">
+            <nav class="card article-toc">
+              <a href="#first-check">First Check</a>
+              <a href="#workflow">Support Workflow</a>
+              <a href="#triage">Quick Triage</a>
+              <a href="#facts">Service Facts</a>
+              <a href="#escalate">Escalation</a>
+              <a href="#related">Related</a>
+            </nav>
+
+            <section class="card article-side-card">
+              <h3>Article Flow</h3>
+              <p>Start with the first checks and action workflow, then use triage and service facts for context.</p>
+            </section>
+          </aside>
+
+          <div class="article-content">
+            <section class="card article-section first-check-section" id="first-check">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>First Check</h3>
+                  <p>Validate these items first so the agent can choose the right path quickly.</p>
+                </div>
+              </div>
+              <div class="first-check-grid">
+                <div>
+                  <strong>1. The user wants to use temporary local transfer or Google Drive</strong>
+                  <span>Ask whether the user wants to use temporary local transfer or Google Drive.</span>
+                </div>
+                <div>
+                  <strong>2. Upload from the user&#x27;s local device, have the user select the My File...</strong>
+                  <span>To upload from the user&#x27;s local device, have the user select the <strong>My Files</strong> icon on the top AppStream toolbar.</span>
+                </div>
+                <div>
+                  <strong>3. In My Files, have the user select Temporary Files as the destination...</strong>
+                  <span>In <strong>My Files</strong>, have the user select <strong>Temporary Files</strong> as the destination folder.</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="workflow">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-clipboard"></use></svg></span>
+                <div>
+                  <h3>Support Workflow</h3>
+                  <p>Internal step path adapted from the source article.</p>
+                </div>
+              </div>
+              <ol class="workflow-list">
+                <li>Ask whether the user wants to use temporary local transfer or Google Drive.</li>
+                <li>To upload from the user&#x27;s local device, have the user select the <strong>My Files</strong> icon on the top AppStream toolbar.</li>
+                <li>In <strong>My Files</strong>, have the user select <strong>Temporary Files</strong> as the destination folder.</li>
+                <li>Have the user select <strong>Upload Files</strong>, choose the local file, and select <strong>Open</strong>.</li>
+                <li>Have the user open <strong>Temporary Files</strong> from the AppStream desktop to confirm the upload completed.</li>
+                <li>To open a file from Google Drive, have the user open the <strong>Google Drive</strong> app from the Apps@Stern catalog or desktop.</li>
+                <li>Have the user select <strong>Get started</strong>, then <strong>Sign In</strong>.</li>
+                <li>Have the user sign in with their NYU email address and verify the Google Drive app access request.</li>
+                <li>On the NYU Single Sign On screen, have the user enter <code>NetID@nyu.edu</code>, enter their NYU password, and complete two-factor authentication if prompted.</li>
+                <li>Have the user complete Google Drive sign-in and confirm that Google Drive is mapped to the virtual desktop.</li>
+                <li>To work with a Google Drive file, have the user copy the file from Google Drive to the AppStream <strong>Documents</strong> folder, then open it with the needed application.</li>
+                <li>To save a file to the user&#x27;s local device, have the user select <strong>File</strong> &gt; <strong>Save As</strong> in the Apps@Stern application and save to <strong>Temporary Files</strong>.</li>
+                <li>Have the user open <strong>My Files</strong>, select <strong>Temporary Files</strong>, choose the saved file, select <strong>Actions</strong>, and select <strong>Download</strong>.</li>
+                <li>To save to Google Drive, have the user select <strong>File</strong> &gt; <strong>Save As</strong>, choose the mapped Google Drive location, and select <strong>Save</strong>.</li>
+                <li>Have the user confirm the saved file from another device or browser after saving to Google Drive.</li>
+              </ol>
+            </section>
+
+            <section class="card article-section" id="triage">
+              <div class="section-heading">
+                <span class="title-icon orange"><svg><use href="#icon-bolt"></use></svg></span>
+                <div>
+                  <h3>Quick Triage</h3>
+                  <p>Common user wording mapped to the likely support area.</p>
+                </div>
+              </div>
+              <div class="triage-grid">
+                <div><strong>Common user wording</strong><span>&quot;I need to open a file from my computer in Apps@Stern.&quot;</span></div>
+                <div><strong>Likely support area</strong><span>File access and storage</span></div>
+                <div><strong>Common user wording</strong><span>&quot;I saved a file in AppStream and need to download it.&quot;</span></div>
+                <div><strong>Likely support area</strong><span>AV or recording request</span></div>
+                <div><strong>Common user wording</strong><span>&quot;I want to use Google Drive in Apps@Stern.&quot;</span></div>
+                <div><strong>Likely support area</strong><span>File access and storage</span></div>
+                <div><strong>Common user wording</strong><span>&quot;I cannot find my saved file after ending the session.&quot;</span></div>
+                <div><strong>Likely support area</strong><span>AV or recording request</span></div>
+                <div><strong>Common user wording</strong><span>&quot;I need to save work so I can access it later.&quot;</span></div>
+                <div><strong>Likely support area</strong><span>AV or recording request</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="facts">
+              <div class="section-heading">
+                <span class="title-icon blue-solid"><svg><use href="#icon-monitor"></use></svg></span>
+                <div>
+                  <h3>Service Facts</h3>
+                  <p>High-confidence details to anchor the support conversation.</p>
+                </div>
+              </div>
+              <div class="fact-grid">
+                <div><strong>Category</strong><span>Apps@Stern</span></div>
+                <div><strong>When to use</strong><span>Use this article when a user needs to upload a local file into Apps@Stern, download a file from Apps@Stern, open a file from Google Drive, or save work from Apps@Stern back to Google Drive.</span></div>
+                <div><strong>Typical report</strong><span>&quot;I need to open a file from my computer in Apps@Stern.&quot;</span></div>
+                <div><strong>Primary owner</strong><span>Stern IT Service Desk</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="escalate">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>Escalation Criteria</h3>
+                  <p>Escalate when the issue needs account review, service access, or manual intervention.</p>
+                </div>
+              </div>
+              <div class="escalation-list">
+                <p>file upload or download fails repeatedly</p>
+                <p>Google Drive does not map after successful sign-in</p>
+                <p>NYU Single Sign On blocks the Google Drive connection</p>
+                <p>the file is missing after saving to the correct location</p>
+                <p>the user receives permission or storage errors.</p>
+              </div>
+            </section>
+
+            <section class="card article-section" id="related">
+              <div class="section-heading">
+                <span class="title-icon black"><svg><use href="#icon-folder"></use></svg></span>
+                <div>
+                  <h3>Related Services</h3>
+                  <p>Service tags and adjacent workflows for navigation and future filtering.</p>
+                </div>
+              </div>
+              <div class="article-tags related-tags">
+                <a href="knowledge-hub.html#software">Apps@Stern</a>
+                <a href="knowledge-hub.html#software">Amazon AppStream</a>
+                <a href="knowledge-hub.html#software">Google Drive</a>
+                <a href="knowledge-hub.html#software">NYU Single Sign On</a>
+                <a href="team-directory.html">Stern IT Service Desk</a>
+                <a href="knowledge-hub.html#software">AppStream</a>
+                <a href="knowledge-hub.html#software">files</a>
+                <a href="knowledge-hub.html#software">Temporary Files</a>
+              </div>
+              <p class="support-footer">For additional questions, contact the Stern IT Service Desk at 212-998-0180 or ServiceDesk@stern.nyu.edu.</p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

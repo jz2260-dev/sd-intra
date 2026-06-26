@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Current Alerts | Stern IT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="layout.js" defer></script>
+    <script src="nyu-status-data.js" defer></script>
+    <script src="nyu-status.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="home">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">Current Alerts</p>
+          <h2>Known issues and active maintenance windows.</h2>
+          <p>Cards are sourced from NYU Service Status. In this local test build, they use the latest saved snapshot from the ServiceNow status feed.</p>
+        </div>
+        <a class="status-source-link" href="https://support.nyu.edu/esc?id=services_status" target="_blank" rel="noreferrer">
+          Open NYU Service Status
+          <svg><use href="#icon-arrow"></use></svg>
+        </a>
+      </section>
+
+      <section class="status-summary-card card">
+        <div>
+          <strong data-nyu-status-count>Loading alerts...</strong>
+          <span data-nyu-status-updated>Checking NYU Service Status</span>
+        </div>
+        <a href="https://support.nyu.edu/esc?id=services_status" target="_blank" rel="noreferrer">Source page</a>
+      </section>
+
+      <section class="alert-page-grid" data-nyu-alerts="full">
+        <article class="card page-card" id="wifi"><div class="card-title"><span class="status red">!</span><h2>Wi-Fi Maintenance - June 15</h2></div><p class="card-copy">Wi-Fi may be intermittent on Sunday 6/15 from 1:00 AM - 5:00 AM.</p></article>
+        <article class="card page-card"><div class="card-title"><span class="status orange-status">!</span><h2>Adobe Licensing Issue</h2></div><p class="card-copy">Some users may experience issues activating Adobe products.</p></article>
+        <article class="card page-card" id="printing"><div class="card-title"><span class="status yellow">!</span><h2>Printer Issues in KMC</h2></div><p class="card-copy">We are investigating printer errors on the 3rd floor.</p></article>
+      </section>
+    </main>
+  </body>
+</html>

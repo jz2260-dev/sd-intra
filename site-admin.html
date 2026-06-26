@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Site Admin | Stern IT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="layout.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="admin">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">Site Admin</p>
+          <h2>Maintain the intranet structure.</h2>
+          <p>Future admin tools can live here: page publishing, owner assignments, review queues, and access notes.</p>
+        </div>
+      </section>
+
+      <section class="subpage-grid three-column">
+        <article class="card page-card"><div class="card-title"><span class="title-icon blue-solid"><svg><use href="#icon-folder"></use></svg></span><h2>Navigation</h2></div><p class="card-copy">The sidebar is now shared from one layout file, so future pages inherit the same nav automatically.</p></article>
+        <article class="card page-card"><div class="card-title"><span class="title-icon orange"><svg><use href="#icon-fire"></use></svg></span><h2>Review Queue</h2></div><p class="card-copy">Track stale articles, expired alerts, and pages that need an owner before publishing.</p></article>
+        <article class="card page-card"><div class="card-title"><span class="title-icon purple"><svg><use href="#icon-settings"></use></svg></span><h2>Site Settings</h2></div><p class="card-copy">Reserved for future permissions, analytics, and connected service URLs.</p></article>
+      </section>
+    </main>
+  </body>
+</html>
