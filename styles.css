@@ -21,8 +21,8 @@
   --red: #ff344f;
   --shadow: 0 9px 24px rgba(51, 6, 98, 0.08), 0 1px 4px rgba(51, 6, 98, 0.08);
   --font-sans: "NYU Perstare", "Perstare", "Segoe UI", Inter, Arial, sans-serif;
-  --dashboard-action-column: clamp(260px, 20vw, 280px);
-  --dashboard-side-column: clamp(340px, 27vw, 374px);
+  --dashboard-action-column: clamp(250px, 19vw, 270px);
+  --dashboard-side-column: clamp(310px, 24vw, 354px);
 }
 
 * {
@@ -321,19 +321,8 @@ svg {
   height: 264px;
   overflow: hidden;
   border-radius: 8px;
-  background:
-    linear-gradient(90deg, rgba(51, 6, 98, 0.94), rgba(87, 6, 140, 0.78)),
-    url("assets/hero-campus.png") center / cover no-repeat;
+  background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--primary) 52%, var(--secondary-light) 100%);
   box-shadow: var(--shadow);
-}
-
-.hero-panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(51, 6, 98, 0.24)),
-    radial-gradient(circle at 16% 100%, rgba(123, 90, 166, 0.45), transparent 35%);
 }
 
 .hero-content {
@@ -637,19 +626,19 @@ svg {
   margin: 22px 0 28px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
 .category {
   width: 100%;
   height: 112px;
-  padding: 14px 8px 12px;
-  display: grid;
-  grid-template-rows: 45px minmax(34px, auto);
-  justify-items: center;
+  min-width: 0;
+  padding: 10px 3px 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  align-content: center;
-  gap: 8px;
+  gap: 7px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: linear-gradient(180deg, #fff, #fafafa);
@@ -658,18 +647,23 @@ svg {
 }
 
 .category svg {
-  width: 39px;
-  height: 39px;
+  flex: 0 0 auto;
+  width: 37px;
+  height: 37px;
   stroke-width: 1.8;
 }
 
 .category strong {
-  min-height: 34px;
-  display: grid;
-  place-items: center;
-  font-size: 13.5px;
-  line-height: 1.2;
+  width: 100%;
+  min-width: 0;
+  display: block;
+  font-size: 12.5px;
+  line-height: 1.16;
   font-weight: 750;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .violet {
