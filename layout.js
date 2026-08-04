@@ -51,6 +51,15 @@ const utilityItems = [
   { id: "admin", label: "Site Admin", href: "site-admin.html", icon: "settings" }
 ];
 
+function rootHref(href) {
+  if (/^[a-z][a-z0-9+.-]*:/i.test(href) || href.startsWith("/") || href.startsWith("#")) {
+    return href;
+  }
+
+  const rootPrefix = document.body.dataset.rootPath || (window.location.pathname.includes("/articles/") ? "../" : "");
+  return `${rootPrefix}${href}`;
+}
+
 function icon(name, className = "") {
   const classAttr = className ? ` class="${className}"` : "";
   return `<svg${classAttr}><use href="#icon-${name}"></use></svg>`;
@@ -76,7 +85,7 @@ function renderNavLink(item, activePage, compact = false) {
   const isActive = item.id === activePage;
   if (isActive) classes.push("active");
   return `
-    <a class="${classes.join(" ")}" href="${item.href}"${isActive ? ' aria-current="page"' : ""}>
+    <a class="${classes.join(" ")}" href="${rootHref(item.href)}"${isActive ? ' aria-current="page"' : ""}>
       ${icon(item.icon)}
       <span>${item.label}</span>
       ${isActive ? icon("chevron", "mobile-nav-cue") : ""}
@@ -118,11 +127,11 @@ function renderTopbar() {
     </div>
 
     <div class="account-area">
-      <a class="bell-button" href="announcements.html" aria-label="Notifications">
+      <a class="bell-button" href="${rootHref("announcements.html")}" aria-label="Notifications">
         ${icon("bell")}
         <span>3</span>
       </a>
-      <a class="user-card" href="team-directory.html#john-doe">
+      <a class="user-card" href="${rootHref("team-directory.html#john-doe")}">
         <div class="avatar">JD</div>
         <div>
           <strong>John Doe</strong>
