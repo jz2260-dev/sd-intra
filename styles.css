@@ -1804,9 +1804,239 @@ svg {
   line-height: 1.45;
 }
 
+.sop-article .article-layout {
+  grid-template-columns: 270px minmax(520px, 1fr);
+}
+
+.sop-meta-grid,
+.decision-grid,
+.sop-check-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.sop-meta-grid {
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+}
+
+.decision-grid {
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+}
+
+.sop-check-grid {
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+}
+
+.sop-meta-grid div,
+.decision-grid div,
+.sop-check-grid div {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.sop-meta-grid strong,
+.decision-grid strong,
+.sop-check-grid strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+}
+
+.sop-meta-grid span,
+.decision-grid span,
+.sop-check-grid span {
+  color: var(--neutral-dark);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.sop-prereqs {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  list-style: none;
+}
+
+.sop-prereqs p,
+.sop-prereqs li {
+  margin: 0;
+  min-height: 56px;
+  padding: 14px 16px 14px 48px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(87, 6, 140, 0.16);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(123, 90, 166, 0.08) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: var(--neutral-dark);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.sop-prereqs p::before,
+.sop-prereqs li::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at center, #ffffff 0 28%, transparent 30%),
+    linear-gradient(135deg, var(--purple), var(--secondary-mid));
+}
+
+.sop-prereqs strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.sop-flow {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.sop-flow li {
+  padding: 0;
+}
+
+.sop-step {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.sop-step > div {
+  display: grid;
+  gap: 6px;
+}
+
+.sop-step > div > strong,
+.sop-step > div > span {
+  display: block;
+}
+
+.sop-step-number {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.sop-step h4 {
+  margin: 0 0 5px;
+  font-size: 15px;
+}
+
+.sop-step p {
+  margin: 0;
+  color: var(--neutral-dark);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.sop-step ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.sop-step code,
+.sop-meta-grid code,
+.decision-grid code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: var(--purple);
+  background: rgba(171, 130, 197, 0.16);
+}
+
+.sop-decision {
+  border-color: var(--secondary-light);
+  background: linear-gradient(180deg, #fff, rgba(171, 130, 197, 0.08));
+}
+
+.sop-decision strong {
+  color: var(--primary);
+}
+
+.sop-article .article-section {
+  border-radius: 12px;
+}
+
+.sop-article .section-heading {
+  margin-bottom: 20px;
+}
+
+.sop-article .section-heading h3 {
+  font-size: 18px;
+}
+
+.sop-article .section-heading p {
+  max-width: 52ch;
+}
+
+.sop-article #prereqs {
+  border: 1px solid rgba(123, 90, 166, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(244, 239, 249, 0.92) 100%);
+}
+
+.sop-completion {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  list-style: none;
+}
+
+.sop-completion li {
+  padding: 12px 14px 12px 46px;
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--neutral-dark);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.sop-completion li::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+}
+
 @media (max-width: 1280px) {
   .workspace {
     padding-right: 18px;
+  }
+
+  .title-lockup p {
+    display: none;
   }
 
   .hero-row,
@@ -2039,6 +2269,9 @@ svg {
   .first-check-grid,
   .fact-grid,
   .quota-cards,
+  .sop-meta-grid,
+  .decision-grid,
+  .sop-check-grid,
   .escalation-list,
   .rate-table div {
     grid-template-columns: 1fr;

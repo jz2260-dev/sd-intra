@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Hire Device Setup SOP | Stern IT</title>
+    <link rel="stylesheet" href="../styles.css?v=20260804-sops">
+    <script src="../layout.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body data-page="sops" data-root-path="../">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <article class="kb-article sop-article">
+        <header class="article-hero">
+          <div>
+            <a class="breadcrumb-link" href="../sops-guides.html">SOPs &amp; Guides</a>
+            <p class="eyebrow">SOP - Internal Procedure</p>
+            <h2>New Hire Device Setup</h2>
+            <p>Use this SOP to validate the request, assign the right hardware, complete imaging or enrollment, and prepare a new hire device for a clean handoff.</p>
+          </div>
+
+          <aside class="article-meta-panel" aria-label="Article metadata">
+            <dl>
+              <div><dt>Owner</dt><dd>Stern IT Service Desk</dd></div>
+              <div><dt>Last reviewed</dt><dd>August 4, 2026</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="Article navigation">
+            <nav class="card article-toc">
+              <a href="#overview">Overview</a>
+              <a href="#prereqs">Prerequisites</a>
+              <a href="#decisions">Decision Points</a>
+              <a href="#workflow">Procedure</a>
+              <a href="#validation">Validation</a>
+              <a href="#escalate">Escalation</a>
+            </nav>
+
+            <section class="card article-side-card">
+              <h3>SOP Flow</h3>
+              <p>Validate the new hire request, match the person to the correct device path, confirm access and apps, then close with reporting and handoff readiness.</p>
+            </section>
+          </aside>
+
+          <div class="article-content">
+            <section class="card article-section" id="overview">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-folder"></use></svg></span>
+                <div>
+                  <h3>Overview</h3>
+                  <p>Use this SOP for onboarding a new hire with a prepared Windows or Apple device.</p>
+                </div>
+              </div>
+              <div class="sop-meta-grid">
+                <div><strong>Primary outcome</strong><span>The new hire receives a fully configured device with correct access, applications, and asset ownership.</span></div>
+                <div><strong>Use when</strong><span>A request is for a new employee or equivalent onboarding setup.</span></div>
+                <div><strong>Do not use when</strong><span>The work is only a repair, replacement without onboarding context, or a temporary access-only request.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="prereqs">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>Prerequisites</h3>
+                  <p>Confirm these before preparing the device.</p>
+                </div>
+              </div>
+              <div class="sop-prereqs">
+                <p>Request confirms a new hire setup and includes start date.</p>
+                <p>User full name, NetID, and department are available.</p>
+                <p>Device type or platform expectation is known.</p>
+                <p>Device inventory or assignment path is confirmed.</p>
+              </div>
+            </section>
+
+            <section class="card article-section" id="decisions">
+              <div class="section-heading">
+                <span class="title-icon orange"><svg><use href="#icon-bolt"></use></svg></span>
+                <div>
+                  <h3>Decision Points</h3>
+                  <p>Use these checks before configuring the device.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Is the platform Windows or Apple?</strong><span>That determines whether the work routes into MDT or Jamf imaging.</span></div>
+                <div class="sop-decision"><strong>Is a device already assigned?</strong><span>If not, coordinate assignment before starting setup work.</span></div>
+                <div class="sop-decision"><strong>Does the user need temporary access?</strong><span>If yes, use the temporary account provisioning SOP instead of improvising access.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="workflow">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-clipboard"></use></svg></span>
+                <div>
+                  <h3>Procedure</h3>
+                  <p>Standard new hire device setup sequence.</p>
+                </div>
+              </div>
+              <div class="sop-flow">
+                <div class="sop-step"><span class="sop-step-number">1</span><div><strong>Review the request</strong><span>Confirm the ticket is for a new hire setup and capture start date, department, and any platform notes.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">2</span><div><strong>Validate user information</strong><span>Confirm full name, NetID, department, and role details if those affect access or software.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">3</span><div><strong>Confirm device assignment</strong><span>Determine whether a new device is being prepared or an existing device is being assigned to the new hire.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">4</span><div><strong>Complete the imaging path</strong><span>Use the Windows MDT SOP for Windows devices or the Jamf imaging SOP for Apple devices.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">5</span><div><strong>Configure access and apps</strong><span>Confirm account readiness, required groups, shared drives, and standard or department-specific applications.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">6</span><div><strong>Validate and prepare handoff</strong><span>Test login, network, apps, reporting tools, and confirm charger or accessories are ready for the user.</span></div></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="validation">
+              <div class="section-heading">
+                <span class="title-icon blue-solid"><svg><use href="#icon-users"></use></svg></span>
+                <div>
+                  <h3>Validation and Closeout</h3>
+                  <p>Use these checks before notifying the new hire or manager.</p>
+                </div>
+              </div>
+              <div class="sop-check-grid">
+                <div><strong>Login</strong><span>The user account can access the device correctly.</span></div>
+                <div><strong>Applications</strong><span>Standard and required apps are installed.</span></div>
+                <div><strong>Access</strong><span>Expected permissions and groups are in place.</span></div>
+                <div><strong>Security reporting</strong><span>KACE, Cortex XDR, InsightVM, and Jamf where relevant are reporting.</span></div>
+                <div><strong>Asset records</strong><span>KACE and Salesforce (E360) reflect the assigned user.</span></div>
+                <div><strong>Handoff readiness</strong><span>The device and accessories are ready for delivery.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="escalate">
+              <div class="section-heading">
+                <span class="title-icon people"><svg><use href="#icon-chart"></use></svg></span>
+                <div>
+                  <h3>Escalation and Recovery</h3>
+                  <p>Escalate when ownership, imaging, or access cannot be resolved inside the standard onboarding path.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>No assigned hardware or unclear ownership</strong><span>Coordinate with inventory or escalate before proceeding.</span></div>
+                <div class="sop-decision"><strong>Imaging or enrollment fails</strong><span>Escalate through the MDT or Jamf path rather than improvising a partial setup.</span></div>
+                <div class="sop-decision"><strong>Required access is missing or unusual</strong><span>Escalate to Endpoint Management with role details and requested access scope.</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

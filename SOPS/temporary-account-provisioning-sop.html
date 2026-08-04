@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temporary Account Provisioning SOP | Stern IT</title>
+    <link rel="stylesheet" href="../styles.css?v=20260804-sops">
+    <script src="../layout.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body data-page="sops" data-root-path="../">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <article class="kb-article sop-article">
+        <header class="article-hero">
+          <div>
+            <a class="breadcrumb-link" href="../sops-guides.html">SOPs &amp; Guides</a>
+            <p class="eyebrow">SOP - Internal Procedure</p>
+            <h2>Temporary Account Provisioning</h2>
+            <p>Use this SOP to validate approvals, create scoped temporary access, define expiration, and document the account clearly for later review and cleanup.</p>
+          </div>
+
+          <aside class="article-meta-panel" aria-label="Article metadata">
+            <dl>
+              <div><dt>Owner</dt><dd>Stern IT Service Desk</dd></div>
+              <div><dt>Last reviewed</dt><dd>August 4, 2026</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="Article navigation">
+            <nav class="card article-toc">
+              <a href="#overview">Overview</a>
+              <a href="#prereqs">Prerequisites</a>
+              <a href="#decisions">Decision Points</a>
+              <a href="#workflow">Procedure</a>
+              <a href="#validation">Validation</a>
+              <a href="#escalate">Escalation</a>
+            </nav>
+
+            <section class="card article-side-card">
+              <h3>SOP Flow</h3>
+              <p>Verify justification and approvals first, define the smallest viable access scope, create the account with an expiration, then document and schedule cleanup.</p>
+            </section>
+          </aside>
+
+          <div class="article-content">
+            <section class="card article-section" id="overview">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-folder"></use></svg></span>
+                <div>
+                  <h3>Overview</h3>
+                  <p>Use this SOP when creating temporary Stern or NYU-related work accounts.</p>
+                </div>
+              </div>
+              <div class="sop-meta-grid">
+                <div><strong>Primary outcome</strong><span>A temporary account is created with approved scope, explicit expiration, and auditable documentation.</span></div>
+                <div><strong>Use when</strong><span>The request is for a visiting scholar, contractor, student worker, teaching fellow, or similar temporary access need.</span></div>
+                <div><strong>Do not use when</strong><span>The request lacks approval, business justification, or a defined end date.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="prereqs">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>Prerequisites</h3>
+                  <p>Confirm these before account creation begins.</p>
+                </div>
+              </div>
+              <div class="sop-prereqs">
+                <p>Request includes business justification and sponsoring context.</p>
+                <p>Manager or department approval is documented.</p>
+                <p>User details and required access scope are complete.</p>
+                <p>Start date and end date are defined and do not exceed one year.</p>
+              </div>
+            </section>
+
+            <section class="card article-section" id="decisions">
+              <div class="section-heading">
+                <span class="title-icon orange"><svg><use href="#icon-bolt"></use></svg></span>
+                <div>
+                  <h3>Decision Points</h3>
+                  <p>Use these checks before granting access.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Is approval complete?</strong><span>If not, do not proceed. Request the approval path in the ticket first.</span></div>
+                <div class="sop-decision"><strong>Is the requested access minimal and specific?</strong><span>If not, reduce scope before provisioning rather than granting broad permissions.</span></div>
+                <div class="sop-decision"><strong>Does the duration exceed one year?</strong><span>If yes, stop and request a corrected duration or a reviewed extension path.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="workflow">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-clipboard"></use></svg></span>
+                <div>
+                  <h3>Procedure</h3>
+                  <p>Standard temporary account creation sequence.</p>
+                </div>
+              </div>
+              <div class="sop-flow">
+                <div class="sop-step"><span class="sop-step-number">1</span><div><strong>Review the request</strong><span>Confirm the ticket is for a temporary account and includes business justification.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">2</span><div><strong>Verify approvals</strong><span>Confirm manager or department approval is present. If missing, stop and request it in the ticket.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">3</span><div><strong>Validate scope and duration</strong><span>Confirm user details, required systems, start date, and end date, ensuring the initial duration does not exceed one year.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">4</span><div><strong>Create the account in Active Directory</strong><span>Create the account using the correct naming convention, set a temporary password, define expiration if supported, and add required groups.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">5</span><div><strong>Grant only required access</strong><span>Assign the minimum necessary groups, applications, and device access without over-permissioning.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">6</span><div><strong>Communicate and document</strong><span>Provide credentials through an approved secure method, instruct the user appropriately, and record username, expiration, approvals, and granted access in the ticket.</span></div></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="validation">
+              <div class="section-heading">
+                <span class="title-icon blue-solid"><svg><use href="#icon-users"></use></svg></span>
+                <div>
+                  <h3>Validation and Closeout</h3>
+                  <p>Use these checks before completing the request.</p>
+                </div>
+              </div>
+              <div class="sop-check-grid">
+                <div><strong>Approval</strong><span>Approval is documented.</span></div>
+                <div><strong>Account creation</strong><span>The temporary account exists and is usable.</span></div>
+                <div><strong>Access scope</strong><span>Only required permissions were granted.</span></div>
+                <div><strong>Expiration</strong><span>A defined end date is in place.</span></div>
+                <div><strong>Communication</strong><span>User or sponsor was notified through an approved method.</span></div>
+                <div><strong>Documentation</strong><span>Ticket contains username, access scope, expiration, and approval notes.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="escalate">
+              <div class="section-heading">
+                <span class="title-icon people"><svg><use href="#icon-chart"></use></svg></span>
+                <div>
+                  <h3>Escalation and Recovery</h3>
+                  <p>Escalate when the request introduces risk or falls outside standard provisioning rules.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Approval or identity is uncertain</strong><span>Stop and escalate rather than creating the account on incomplete evidence.</span></div>
+                <div class="sop-decision"><strong>Requested access is unusually broad or sensitive</strong><span>Escalate to Endpoint Management or the appropriate approver for review.</span></div>
+                <div class="sop-decision"><strong>Account creation or group assignment fails</strong><span>Escalate with request details, attempted steps, and the failure point.</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

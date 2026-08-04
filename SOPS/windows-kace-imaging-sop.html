@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Windows KACE Imaging SOP | Stern IT</title>
+    <link rel="stylesheet" href="../styles.css?v=20260804-sops">
+    <script src="../layout.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body data-page="sops" data-root-path="../">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <article class="kb-article sop-article">
+        <header class="article-hero">
+          <div>
+            <a class="breadcrumb-link" href="../sops-guides.html">SOPs &amp; Guides</a>
+            <p class="eyebrow">SOP - Internal Procedure</p>
+            <h2>Image and Configure Windows Device (KACE)</h2>
+            <p>Fallback imaging procedure for non-standard or unsupported Windows hardware when MDT cannot be used successfully.</p>
+          </div>
+
+          <aside class="article-meta-panel" aria-label="Article metadata">
+            <dl>
+              <div><dt>Owner</dt><dd>Stern IT Service Desk</dd></div>
+              <div><dt>Last reviewed</dt><dd>August 4, 2026</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="Article navigation">
+            <nav class="card article-toc">
+              <a href="#overview">Overview</a>
+              <a href="#prereqs">Prerequisites</a>
+              <a href="#decisions">Decision Points</a>
+              <a href="#workflow">Procedure</a>
+              <a href="#validation">Validation</a>
+              <a href="#escalate">Escalation</a>
+            </nav>
+
+            <section class="card article-side-card">
+              <h3>SOP Flow</h3>
+              <p>This is the fallback path. Confirm MDT is not viable first, then proceed through KACE registration, deployment, validation, and asset updates.</p>
+            </section>
+          </aside>
+
+          <div class="article-content">
+            <section class="card article-section" id="overview">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-folder"></use></svg></span>
+                <div>
+                  <h3>Overview</h3>
+                  <p>Use this SOP only as the fallback imaging path when MDT is not viable.</p>
+                </div>
+              </div>
+              <div class="sop-meta-grid">
+                <div><strong>Primary outcome</strong><span>Recover a non-standard Windows device through KACE-managed imaging and return it to a supported handoff state.</span></div>
+                <div><strong>Use when</strong><span>Unsupported hardware, missing drivers, or repeated MDT failure blocks the standard path.</span></div>
+                <div><strong>Do not use when</strong><span>The device can still complete the MDT flow with standard recovery checks.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="prereqs">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>Prerequisites</h3>
+                  <p>Confirm these before moving off the MDT path.</p>
+                </div>
+              </div>
+              <div class="sop-prereqs">
+                <p>MDT path already attempted or ruled out for a documented reason.</p>
+                <p>Device is connected to Ethernet and can reach KACE services.</p>
+                <p>Local administrator path is available for agent install and recovery steps.</p>
+                <p>Device model and failure context are documented before escalation or fallback imaging.</p>
+              </div>
+            </section>
+
+            <section class="card article-section" id="decisions">
+              <div class="section-heading">
+                <span class="title-icon orange"><svg><use href="#icon-bolt"></use></svg></span>
+                <div>
+                  <h3>Decision Points</h3>
+                  <p>Use these checks before committing to the fallback path.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Did MDT fail for a real hardware reason?</strong><span>If yes, continue here. If the issue was only a missed BIOS or network setting, correct MDT first.</span></div>
+                <div class="sop-decision"><strong>Can the device register in KACE?</strong><span>If not, stop and resolve network or agent health before assuming the fallback imaging will complete.</span></div>
+                <div class="sop-decision"><strong>Are drivers still missing after KACE?</strong><span>Use manufacturer recovery only as a targeted repair, then escalate if the endpoint still cannot reach standard state.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="workflow">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-clipboard"></use></svg></span>
+                <div>
+                  <h3>Procedure</h3>
+                  <p>Fallback imaging sequence for unsupported devices.</p>
+                </div>
+              </div>
+              <div class="sop-flow">
+                <div class="sop-step"><span class="sop-step-number">1</span><div><strong>Prepare the device</strong><span>Enter BIOS with <strong>F2</strong>, disable <strong>MAC Address Pass-Through</strong>, enable <strong>UEFI Network Stack</strong>, then save and restart.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">2</span><div><strong>Reach local setup</strong><span>Boot to Windows setup. If needed, use installation media. At the network requirement screen, press <strong>CTRL + SHIFT + F10</strong>, run <code>oobe\bypassnro</code>, and let the device restart.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">3</span><div><strong>Create a local admin path</strong><span>Continue with limited setup, create a local administrator account, and do not use a Microsoft account.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">4</span><div><strong>Register with KACE</strong><span>Connect via Ethernet, install the KACE agent, navigate to <code>C:\Program Files\Quest\Kace</code>, and run <code>runkbot 4 0</code>.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">5</span><div><strong>Launch the fallback image task</strong><span>Confirm the device appears correctly in KACE, then run the <strong>Deploy Windows 11 Image</strong> task chain from the KACE admin console.</span></div></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="validation">
+              <div class="section-heading">
+                <span class="title-icon blue-solid"><svg><use href="#icon-monitor"></use></svg></span>
+                <div>
+                  <h3>Post-Imaging Validation</h3>
+                  <p>Use these checks to confirm the fallback build is actually ready.</p>
+                </div>
+              </div>
+              <div class="sop-check-grid">
+                <div><strong>Driver health</strong><span>Network and core device drivers are functioning after deployment.</span></div>
+                <div><strong>Apps and licensing</strong><span>KACE-installed apps open correctly and Office licensing is active.</span></div>
+                <div><strong>Security reporting</strong><span>KACE, Cortex XDR, and InsightVM are reporting successfully.</span></div>
+                <div><strong>Asset updates</strong><span>KACE labels, user assignment, and Salesforce (E360) ownership details are updated.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="escalate">
+              <div class="section-heading">
+                <span class="title-icon people"><svg><use href="#icon-chart"></use></svg></span>
+                <div>
+                  <h3>Escalation Criteria</h3>
+                  <p>Bring in Endpoint Management when the fallback path itself starts breaking down.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Device still unsupported after enrollment</strong><span>Escalate with the device model, BIOS state, and exact KACE results.</span></div>
+                <div class="sop-decision"><strong>KACE agent installs but never registers</strong><span>Stop the workflow and escalate after confirming Ethernet and agent path.</span></div>
+                <div class="sop-decision"><strong>Task chain fails or image is incomplete</strong><span>Retry once if appropriate, then escalate instead of layering manual fixes.</span></div>
+                <div class="sop-decision"><strong>Core drivers remain missing</strong><span>Escalate to Endpoint Management with the hardware model and driver gap details.</span></div>
+              </div>
+              <p class="support-footer">Escalate to <strong>Endpoint Management</strong> with the device model, KACE status, and the exact steps already performed.</p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

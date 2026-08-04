@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Windows Desktop MDT SOP | Stern IT</title>
+    <link rel="stylesheet" href="../styles.css?v=20260804-sops">
+    <script src="../layout.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body data-page="sops" data-root-path="../">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <article class="kb-article sop-article">
+        <header class="article-hero">
+          <div>
+            <a class="breadcrumb-link" href="../sops-guides.html">SOPs &amp; Guides</a>
+            <p class="eyebrow">SOP - Internal Procedure</p>
+            <h2>Image and Configure Windows Desktop (MDT)</h2>
+            <p>Standard NYU desktop imaging workflow for MDT-based Windows 11 deployments, with clear setup decisions, post-image validation, and asset handoff.</p>
+          </div>
+
+          <aside class="article-meta-panel" aria-label="Article metadata">
+            <dl>
+              <div><dt>Owner</dt><dd>Stern IT Service Desk</dd></div>
+              <div><dt>Last reviewed</dt><dd>August 4, 2026</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="Article navigation">
+            <nav class="card article-toc">
+              <a href="#overview">Overview</a>
+              <a href="#prereqs">Prerequisites</a>
+              <a href="#decisions">Decision Points</a>
+              <a href="#workflow">Procedure</a>
+              <a href="#validation">Validation</a>
+              <a href="#escalate">Escalation</a>
+            </nav>
+
+            <section class="card article-side-card">
+              <h3>SOP Flow</h3>
+              <p>Confirm the desktop is suitable for MDT, complete the build path, then close with validation, DNS, and asset record updates.</p>
+            </section>
+          </aside>
+
+          <div class="article-content">
+            <section class="card article-section" id="overview">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-folder"></use></svg></span>
+                <div>
+                  <h3>Overview</h3>
+                  <p>Use this SOP for standard NYU desktop imaging through MDT.</p>
+                </div>
+              </div>
+              <div class="sop-meta-grid">
+                <div><strong>Primary outcome</strong><span>Deliver a domain-ready desktop with validated imaging, user setup, updates, and correctly recorded network and asset data.</span></div>
+                <div><strong>Use when</strong><span>The desktop can boot reliably to MDT over the onboard NIC path.</span></div>
+                <div><strong>Do not use when</strong><span>The device cannot sustain the MDT path or requires unsupported hardware handling.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="prereqs">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>Prerequisites</h3>
+                  <p>Confirm these before imaging starts.</p>
+                </div>
+              </div>
+              <div class="sop-prereqs">
+                <p>Supported desktop connected to stable Ethernet.</p>
+                <p>Expected computer name and destination OU confirmed.</p>
+                <p>NYU credentials available for MDT authentication.</p>
+                <p>DNS or VLAN expectations known before handoff.</p>
+              </div>
+            </section>
+
+            <section class="card article-section" id="decisions">
+              <div class="section-heading">
+                <span class="title-icon orange"><svg><use href="#icon-bolt"></use></svg></span>
+                <div>
+                  <h3>Decision Points</h3>
+                  <p>Use these checkpoints to avoid rework.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Can the device boot from the onboard NIC?</strong><span>If yes, stay on the MDT path. If no, stop and correct BIOS or physical network issues first.</span></div>
+                <div class="sop-decision"><strong>Is the final OU known?</strong><span>If not, use <code>OU-STAGING</code> and flag the follow-up rather than guessing the destination.</span></div>
+                <div class="sop-decision"><strong>Did post-image automation fail?</strong><span>Run the documented recovery step once, then escalate if the build still does not stabilize.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="workflow">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-clipboard"></use></svg></span>
+                <div>
+                  <h3>Procedure</h3>
+                  <p>End-to-end desktop imaging sequence.</p>
+                </div>
+              </div>
+              <div class="sop-flow">
+                <div class="sop-step"><span class="sop-step-number">1</span><div><strong>Prepare BIOS and network boot</strong><span>Restart the desktop, enter BIOS with <strong>F2</strong>, enable <strong>UEFI Network Stack</strong>, save, and restart.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">2</span><div><strong>Launch MDT deployment</strong><span>Press <strong>F12</strong>, choose <strong>Onboard NIC (IPv4)</strong>, authenticate with NYU credentials, and start <strong>Deploy Staff PC -- Windows 11 25H2</strong>.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">3</span><div><strong>Set naming and OU</strong><span>Name the machine using <code>SSB-[Serial Tag]</code>, choose the correct department OU, and use <code>OU-STAGING</code> if the destination is unclear.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">4</span><div><strong>Complete administrator pass</strong><span>Sign in as <strong>Administrator</strong>, retrieve the password from PAM if needed, allow the script to run, and restart. If needed, run <code>C:\scripts\FirstLoginAdmin.bat</code>.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">5</span><div><strong>Apply standards and updates</strong><span>Confirm Windows and Office activation, add the user&apos;s NetID to local <strong>Administrators</strong>, set browser homepages to <code>sternlife.stern.nyu.edu</code>, and complete Windows, Zoom, browser, and application updates.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">6</span><div><strong>Run reporting and network updates</strong><span>Run KACE, InsightVM, and Cortex XDR check-ins, then record MAC and DNS details with the correct VLAN before handoff.</span></div></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="validation">
+              <div class="section-heading">
+                <span class="title-icon blue-solid"><svg><use href="#icon-monitor"></use></svg></span>
+                <div>
+                  <h3>Validation and Closeout</h3>
+                  <p>Use these checks before handing off the desktop.</p>
+                </div>
+              </div>
+              <div class="sop-check-grid">
+                <div><strong>Activation</strong><span>Windows and Office are activated.</span></div>
+                <div><strong>User access</strong><span>The assigned user can sign in and has the right local permissions.</span></div>
+                <div><strong>Standards</strong><span>Browsers, Zoom, and core apps match the expected desktop standard.</span></div>
+                <div><strong>Reporting</strong><span>KACE, InsightVM, and Cortex XDR are reporting correctly.</span></div>
+                <div><strong>Network records</strong><span>MAC, DNS, and VLAN details are updated accurately.</span></div>
+                <div><strong>Asset records</strong><span>Salesforce (E360) and KACE labels reflect the final ownership.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="escalate">
+              <div class="section-heading">
+                <span class="title-icon people"><svg><use href="#icon-chart"></use></svg></span>
+                <div>
+                  <h3>Escalation and Recovery</h3>
+                  <p>Escalate instead of improvising through repeated failures.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Device will not boot to MDT</strong><span>Review BIOS and wired network path first. Do not continue until the boot method is reliable.</span></div>
+                <div class="sop-decision"><strong>Post-image script or activation fails</strong><span>Use the manual recovery step once, then escalate instead of repeating the same failed flow.</span></div>
+                <div class="sop-decision"><strong>DNS, VLAN, or asset ownership is unclear</strong><span>Hold the handoff and resolve the record path before closing the ticket.</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

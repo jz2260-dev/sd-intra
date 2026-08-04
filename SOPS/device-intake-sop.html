@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Device Intake SOP | Stern IT</title>
+    <link rel="stylesheet" href="../styles.css?v=20260804-sops">
+    <script src="../layout.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body data-page="sops" data-root-path="../">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <article class="kb-article sop-article">
+        <header class="article-hero">
+          <div>
+            <a class="breadcrumb-link" href="../sops-guides.html">SOPs &amp; Guides</a>
+            <p class="eyebrow">SOP - Internal Procedure</p>
+            <h2>Device Intake and Request Handling</h2>
+            <p>Use this SOP to validate intake method, confirm approvals and data responsibility, and route hardware requests into the correct imaging or support workflow.</p>
+          </div>
+
+          <aside class="article-meta-panel" aria-label="Article metadata">
+            <dl>
+              <div><dt>Owner</dt><dd>Stern IT Service Desk</dd></div>
+              <div><dt>Last reviewed</dt><dd>August 4, 2026</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="Article navigation">
+            <nav class="card article-toc">
+              <a href="#overview">Overview</a>
+              <a href="#prereqs">Prerequisites</a>
+              <a href="#decisions">Decision Points</a>
+              <a href="#workflow">Procedure</a>
+              <a href="#validation">Validation</a>
+              <a href="#escalate">Escalation</a>
+            </nav>
+
+            <section class="card article-side-card">
+              <h3>SOP Flow</h3>
+              <p>Confirm how the request arrived, validate details and approvals, document data responsibility, then route the work into the correct device workflow.</p>
+            </section>
+          </aside>
+
+          <div class="article-content">
+            <section class="card article-section" id="overview">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-folder"></use></svg></span>
+                <div>
+                  <h3>Overview</h3>
+                  <p>Use this SOP for all new device, reimage, and walk-in device intake requests.</p>
+                </div>
+              </div>
+              <div class="sop-meta-grid">
+                <div><strong>Primary outcome</strong><span>Requests are accepted only when information, approvals, and risk acknowledgments are complete.</span></div>
+                <div><strong>Use when</strong><span>A device request comes in through walk-in intake, Salesforce, or email-generated ticket.</span></div>
+                <div><strong>Do not use when</strong><span>The work is already validated and actively in imaging or advanced endpoint troubleshooting.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="prereqs">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>Prerequisites</h3>
+                  <p>Confirm these before formally accepting or routing the request.</p>
+                </div>
+              </div>
+              <div class="sop-prereqs">
+                <p>Intake source is known: walk-in, Salesforce, or email-generated ticket.</p>
+                <p>User identity, department, and request type are captured.</p>
+                <p>Required approvals are present or identified as missing.</p>
+                <p>Data responsibility has been acknowledged for reimage or repair work.</p>
+              </div>
+            </section>
+
+            <section class="card article-section" id="decisions">
+              <div class="section-heading">
+                <span class="title-icon orange"><svg><use href="#icon-bolt"></use></svg></span>
+                <div>
+                  <h3>Decision Points</h3>
+                  <p>Use these checks before moving the request forward.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Is the request complete enough to accept?</strong><span>If required information is missing, pause and clarify before routing or starting work.</span></div>
+                <div class="sop-decision"><strong>Is this a new device or reimage?</strong><span>Use that answer to choose the downstream SOP and confirm data risk communication.</span></div>
+                <div class="sop-decision"><strong>Was a release form required?</strong><span>Do not accept a walk-in device without the signed release form and basic hardware details.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="workflow">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-clipboard"></use></svg></span>
+                <div>
+                  <h3>Procedure</h3>
+                  <p>Standard intake and routing sequence.</p>
+                </div>
+              </div>
+              <div class="sop-flow">
+                <div class="sop-step"><span class="sop-step-number">1</span><div><strong>Identify the intake method</strong><span>Determine whether the request arrived by walk-in release form, Salesforce request, or email-generated ticket.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">2</span><div><strong>Validate the request type</strong><span>Confirm whether the work is a new device request or a reimage of existing hardware.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">3</span><div><strong>Confirm required details and approvals</strong><span>Verify NetID, department, device type, serial or model if applicable, and any required approvals before continuing.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">4</span><div><strong>Document data responsibility</strong><span>For reimage or repair work, confirm the user understands that backup is their responsibility and that the device may be wiped or reset.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">5</span><div><strong>Route the work</strong><span>Send laptop work to the laptop imaging SOP, desktop work to the desktop imaging SOP, or escalate to Endpoint Management if the request is outside standard handling.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">6</span><div><strong>Update the ticket and user communication</strong><span>Document intake source, request type, device details, actions taken, current status, and user-facing updates.</span></div></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="validation">
+              <div class="section-heading">
+                <span class="title-icon blue-solid"><svg><use href="#icon-users"></use></svg></span>
+                <div>
+                  <h3>Validation and Closeout</h3>
+                  <p>Use these checks before closing the intake stage.</p>
+                </div>
+              </div>
+              <div class="sop-check-grid">
+                <div><strong>Intake source</strong><span>The request source is documented correctly.</span></div>
+                <div><strong>Request details</strong><span>User, device, department, and request type are complete.</span></div>
+                <div><strong>Approvals</strong><span>Required approvals are present or the request is held appropriately.</span></div>
+                <div><strong>Data acknowledgment</strong><span>Backup and wipe responsibility are documented when relevant.</span></div>
+                <div><strong>Routing</strong><span>The request is sent to the correct downstream workflow.</span></div>
+                <div><strong>Ticket notes</strong><span>Status and actions taken are recorded clearly.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="escalate">
+              <div class="section-heading">
+                <span class="title-icon people"><svg><use href="#icon-chart"></use></svg></span>
+                <div>
+                  <h3>Escalation and Recovery</h3>
+                  <p>Escalate when request quality or authority is insufficient.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>No release form or required approval</strong><span>Hold the request and do not accept or proceed until the missing requirement is resolved.</span></div>
+                <div class="sop-decision"><strong>Request is unclear or contradictory</strong><span>Clarify with the user or manager before routing the device.</span></div>
+                <div class="sop-decision"><strong>Workflow does not fit standard imaging paths</strong><span>Escalate to Endpoint Management with intake notes and device context.</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

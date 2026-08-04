@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Classroom Podium PC Login SOP | Stern IT</title>
+    <link rel="stylesheet" href="../styles.css?v=20260804-sops">
+    <script src="../layout.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body data-page="sops" data-root-path="../">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <article class="kb-article sop-article">
+        <header class="article-hero">
+          <div>
+            <a class="breadcrumb-link" href="../sops-guides.html">SOPs &amp; Guides</a>
+            <p class="eyebrow">SOP - Internal Procedure</p>
+            <h2>Classroom Podium PC Login Support</h2>
+            <p>Use this SOP to restore podium PC access quickly, validate classroom readiness, and decide when to use the local fallback account or escalate.</p>
+          </div>
+
+          <aside class="article-meta-panel" aria-label="Article metadata">
+            <dl>
+              <div><dt>Owner</dt><dd>Stern IT Service Desk</dd></div>
+              <div><dt>Last reviewed</dt><dd>August 4, 2026</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="Article navigation">
+            <nav class="card article-toc">
+              <a href="#overview">Overview</a>
+              <a href="#prereqs">Prerequisites</a>
+              <a href="#decisions">Decision Points</a>
+              <a href="#workflow">Procedure</a>
+              <a href="#validation">Validation</a>
+              <a href="#escalate">Escalation</a>
+            </nav>
+
+            <section class="card article-side-card">
+              <h3>SOP Flow</h3>
+              <p>Wake the podium, confirm the login path, validate classroom tools, and use the local contingency path only when time-sensitive access is blocked.</p>
+            </section>
+          </aside>
+
+          <div class="article-content">
+            <section class="card article-section" id="overview">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-folder"></use></svg></span>
+                <div>
+                  <h3>Overview</h3>
+                  <p>Use this SOP when supporting podium PC logins in classrooms or event spaces.</p>
+                </div>
+              </div>
+              <div class="sop-meta-grid">
+                <div><strong>Primary outcome</strong><span>Restore user access and confirm the podium is ready for presentation or instruction.</span></div>
+                <div><strong>Use when</strong><span>The issue involves classroom podium PC login, profile load, or immediate classroom functionality.</span></div>
+                <div><strong>Do not use when</strong><span>The issue is clearly projector-only, network-only, or a persistent domain problem requiring Endpoint Management.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="prereqs">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>Prerequisites</h3>
+                  <p>Confirm these before troubleshooting the login path.</p>
+                </div>
+              </div>
+              <div class="sop-prereqs">
+                <p>Podium PC is powered on or can be woken from sleep.</p>
+                <p>Monitor, keyboard, mouse, and projector or display path are active.</p>
+                <p>User has NYU credentials available.</p>
+                <p>Room location is known in case escalation is needed.</p>
+              </div>
+            </section>
+
+            <section class="card article-section" id="decisions">
+              <div class="section-heading">
+                <span class="title-icon orange"><svg><use href="#icon-bolt"></use></svg></span>
+                <div>
+                  <h3>Decision Points</h3>
+                  <p>Use these checks to choose the fastest safe path.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Is the Windows login screen visible?</strong><span>If not, restore power, display, or device wake state before testing credentials.</span></div>
+                <div class="sop-decision"><strong>Is class or an event starting immediately?</strong><span>If time is critical and standard login fails, use the local <code>.\tutor</code> account as the contingency path.</span></div>
+                <div class="sop-decision"><strong>Is this likely a first-time login?</strong><span>If yes, allow extra time for profile creation before assuming the login is stuck.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="workflow">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-clipboard"></use></svg></span>
+                <div>
+                  <h3>Procedure</h3>
+                  <p>Standard podium login support sequence.</p>
+                </div>
+              </div>
+              <div class="sop-flow">
+                <div class="sop-step"><span class="sop-step-number">1</span><div><strong>Wake or power on the podium</strong><span>Power on or wake the device and confirm the monitor and attached peripherals are active.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">2</span><div><strong>Confirm the login screen</strong><span>Verify the Windows login screen is visible and the device appears domain-connected.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">3</span><div><strong>Test the user login</strong><span>Have the user enter NetID and NYU password, then allow the login to process fully.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">4</span><div><strong>Allow first-time profile creation if needed</strong><span>If the user has not signed into this podium before, allow several minutes for the profile to build.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">5</span><div><strong>Validate classroom basics</strong><span>Confirm internet access, browser launch, presentation software, and the display or projector path.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">6</span><div><strong>Use testing closeout when appropriate</strong><span>If the login was only for validation, log out after confirming podium readiness.</span></div></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="validation">
+              <div class="section-heading">
+                <span class="title-icon blue-solid"><svg><use href="#icon-users"></use></svg></span>
+                <div>
+                  <h3>Validation and Closeout</h3>
+                  <p>Use these checks before leaving the classroom.</p>
+                </div>
+              </div>
+              <div class="sop-check-grid">
+                <div><strong>User access</strong><span>The user can log in successfully.</span></div>
+                <div><strong>Desktop load</strong><span>The desktop opens with no login or profile errors.</span></div>
+                <div><strong>Network</strong><span>Internet access is working on the podium.</span></div>
+                <div><strong>Presentation tools</strong><span>Browser and presentation software launch correctly.</span></div>
+                <div><strong>Display path</strong><span>Projector or classroom display output is functioning.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="escalate">
+              <div class="section-heading">
+                <span class="title-icon people"><svg><use href="#icon-chart"></use></svg></span>
+                <div>
+                  <h3>Escalation and Recovery</h3>
+                  <p>Escalate when the issue is larger than a quick podium recovery.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>User cannot log in after credential validation</strong><span>Confirm AD path and escalate to Endpoint Management with room, device, NetID, and error details.</span></div>
+                <div class="sop-decision"><strong>No network or domain behavior</strong><span>Follow the network access SOP or escalate with connectivity details.</span></div>
+                <div class="sop-decision"><strong>Class is starting and standard login is blocked</strong><span>Use <code>.\tutor</code> as the immediate contingency, then document and escalate the persistent issue.</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

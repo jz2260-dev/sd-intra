@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Windows Laptop MDT SOP | Stern IT</title>
+    <link rel="stylesheet" href="../styles.css?v=20260804-sops">
+    <script src="../layout.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body data-page="sops" data-root-path="../">
+    <div id="site-icons"></div>
+    <div id="site-sidebar"></div>
+
+    <main class="workspace page-workspace">
+      <header id="site-topbar" class="topbar"></header>
+
+      <article class="kb-article sop-article">
+        <header class="article-hero">
+          <div>
+            <a class="breadcrumb-link" href="../sops-guides.html">SOPs &amp; Guides</a>
+            <p class="eyebrow">SOP - Internal Procedure</p>
+            <h2>Image and Configure Windows Laptop (MDT)</h2>
+            <p>Standard NYU laptop imaging workflow for MDT-based Windows 11 builds, with clear go or no-go checks, local user setup, validation, and final asset updates.</p>
+          </div>
+
+          <aside class="article-meta-panel" aria-label="Article metadata">
+            <dl>
+              <div><dt>Owner</dt><dd>Stern IT Service Desk</dd></div>
+              <div><dt>Last reviewed</dt><dd>August 4, 2026</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <div class="article-layout">
+          <aside class="article-rail" aria-label="Article navigation">
+            <nav class="card article-toc">
+              <a href="#overview">Overview</a>
+              <a href="#prereqs">Prerequisites</a>
+              <a href="#decisions">Decision Points</a>
+              <a href="#workflow">Procedure</a>
+              <a href="#validation">Validation</a>
+              <a href="#escalate">Escalation</a>
+            </nav>
+
+            <section class="card article-side-card">
+              <h3>SOP Flow</h3>
+              <p>Start with imaging readiness, confirm the laptop should stay on the MDT path, complete the build, then close with validation and record updates.</p>
+            </section>
+          </aside>
+
+          <div class="article-content">
+            <section class="card article-section" id="overview">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-folder"></use></svg></span>
+                <div>
+                  <h3>Overview</h3>
+                  <p>Use this SOP for standard NYU laptop imaging through MDT.</p>
+                </div>
+              </div>
+              <div class="sop-meta-grid">
+                <div><strong>Primary outcome</strong><span>Deliver a fully imaged Windows 11 laptop with local user setup, required agents reporting, and asset records updated.</span></div>
+                <div><strong>Use when</strong><span>The device is a supported laptop and can boot cleanly to MDT over a USB NIC path.</span></div>
+                <div><strong>Do not use when</strong><span>MDT repeatedly fails, network boot is unsupported, or hardware requires the KACE fallback path.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="prereqs">
+              <div class="section-heading">
+                <span class="title-icon warn"><svg><use href="#icon-alert"></use></svg></span>
+                <div>
+                  <h3>Prerequisites</h3>
+                  <p>Confirm these before you begin imaging.</p>
+                </div>
+              </div>
+              <div class="sop-prereqs">
+                <p>Supported laptop connected to power and stable network.</p>
+                <p>USB NIC available and recognized by the device.</p>
+                <p>NYU credentials available for the MDT deployment share.</p>
+                <p>Expected computer naming convention confirmed before deployment starts.</p>
+              </div>
+            </section>
+
+            <section class="card article-section" id="decisions">
+              <div class="section-heading">
+                <span class="title-icon orange"><svg><use href="#icon-bolt"></use></svg></span>
+                <div>
+                  <h3>Decision Points</h3>
+                  <p>Use these checks to stay on the right path.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>Can the laptop PXE or USB-NIC boot into MDT?</strong><span>If yes, continue with this SOP. If no, stop and review BIOS settings or move to the KACE SOP if the failure persists.</span></div>
+                <div class="sop-decision"><strong>Is MAC Address Pass-Through enabled?</strong><span>Disable it before retrying the network boot path on supported hardware.</span></div>
+                <div class="sop-decision"><strong>Did the first-login automation run?</strong><span>If not, complete the manual recovery step before moving on to user setup and validation.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="workflow">
+              <div class="section-heading">
+                <span class="title-icon purple"><svg><use href="#icon-clipboard"></use></svg></span>
+                <div>
+                  <h3>Procedure</h3>
+                  <p>Primary imaging sequence for NYU laptops.</p>
+                </div>
+              </div>
+              <div class="sop-flow">
+                <div class="sop-step"><span class="sop-step-number">1</span><div><strong>Prepare BIOS and boot path</strong><span>Enter BIOS with <strong>F2</strong>, enable <strong>UEFI Network Stack</strong>, disable <strong>MAC Address Pass-Through</strong> if available, save, and restart.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">2</span><div><strong>Start MDT deployment</strong><span>Press <strong>F12</strong>, choose <strong>USB NIC (IPv4)</strong>, authenticate with NYU credentials, and launch <strong>Deploy Staff PC -- Windows 11 25H2</strong>.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">3</span><div><strong>Set deployment choices</strong><span>Enter the computer name, choose <strong>Join Workgroup</strong>, keep the workgroup as <code>Workgroup</code>, select Adobe only if required, and begin imaging.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">4</span><div><strong>Complete administrator pass</strong><span>After imaging, sign in as <strong>Administrator</strong>, allow the script to run, and restart. If the script does not run, use <code>C:\scripts\FirstLogin.bat</code>.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">5</span><div><strong>Create and validate the user account</strong><span>Create the local NetID user, add the account to local <strong>Administrators</strong>, sign in as the user, allow the user-side script to run, restart, and sign back in.</span></div></div>
+                <div class="sop-step"><span class="sop-step-number">6</span><div><strong>Standardize apps and reporting</strong><span>Set Chrome, Edge, and Firefox to <code>sternlife.stern.nyu.edu</code>, complete Windows and app updates, then run KACE, InsightVM, and Cortex XDR check-ins.</span></div></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="validation">
+              <div class="section-heading">
+                <span class="title-icon blue-solid"><svg><use href="#icon-users"></use></svg></span>
+                <div>
+                  <h3>Validation and Closeout</h3>
+                  <p>Use these checks before handoff.</p>
+                </div>
+              </div>
+              <div class="sop-check-grid">
+                <div><strong>Activation</strong><span>Windows and Office activate successfully.</span></div>
+                <div><strong>User sign-in</strong><span>The local NetID user can sign in and has the expected admin membership.</span></div>
+                <div><strong>Standards</strong><span>Browsers, Zoom, and required updates are complete.</span></div>
+                <div><strong>Reporting</strong><span>KACE, InsightVM, and Cortex XDR are all checking in.</span></div>
+                <div><strong>Asset records</strong><span>KACE labels and Salesforce (E360) assignment are updated correctly.</span></div>
+                <div><strong>Password handling</strong><span>Require password change at next login once the handoff is ready.</span></div>
+              </div>
+            </section>
+
+            <section class="card article-section" id="escalate">
+              <div class="section-heading">
+                <span class="title-icon people"><svg><use href="#icon-chart"></use></svg></span>
+                <div>
+                  <h3>Escalation and Recovery</h3>
+                  <p>Escalate instead of forcing the build when these happen.</p>
+                </div>
+              </div>
+              <div class="decision-grid">
+                <div class="sop-decision"><strong>MDT boot keeps failing</strong><span>Recheck BIOS, USB NIC path, and network stack. If the path still fails, move to the KACE fallback procedure.</span></div>
+                <div class="sop-decision"><strong>Script or activation failure</strong><span>Use the documented manual recovery step once, then escalate rather than rebuilding immediately.</span></div>
+                <div class="sop-decision"><strong>Asset or security tools not reporting</strong><span>Hold the handoff until KACE, InsightVM, Cortex XDR, and E360 are corrected.</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
